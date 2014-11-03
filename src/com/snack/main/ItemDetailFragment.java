@@ -1,11 +1,5 @@
 package com.snack.main;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLConnection;
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
