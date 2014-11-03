@@ -1,13 +1,21 @@
 package com.snack.main;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.snack.main.dummy.DummyContent;
+import com.snack.util.NetworkHelper;
 
 /**
  * A fragment representing a single Item detail screen. This fragment is either
@@ -44,6 +52,7 @@ public class ItemDetailFragment extends Fragment {
 			mItem = DummyContent.ITEM_MAP.get(getArguments().getString(
 					ARG_ITEM_ID));
 		}
+		Log.i("Info", "oncreate");
 	}
 
 	@Override
@@ -53,11 +62,16 @@ public class ItemDetailFragment extends Fragment {
 				container, false);
 
 		// Show the dummy content as text in a TextView.
-		if (mItem != null) {
-			((TextView) rootView.findViewById(R.id.item_detail))
-					.setText(mItem.content);
+//		if (mItem != null) {
+//			((TextView) rootView.findViewById(R.id.item_detail))
+//					.setText(mItem.content);
+//		}
+		((TextView) rootView.findViewById(R.id.item_detail)).setText("--------");
+		new Thread(new NetworkHelper()).start();
+		if(NetworkHelper.content != "") {
+			((TextView) rootView.findViewById(R.id.item_detail)).setText(NetworkHelper.content);
 		}
-
+		Log.i("Info", "oncreateview");
 		return rootView;
 	}
 }
