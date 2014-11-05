@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.snack.main.dummy.DummyContent;
+import com.snack.main.content.DummyContent;
 
 /**
  * A list fragment representing a list of Items. This fragment also supports

@@ -1,43 +1,41 @@
 package com.snack.util;
 
-import java.io.BufferedInputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLConnection;
+import java.util.ArrayList;
+import java.util.List;
 
-import org.apache.http.util.ByteArrayBuffer;
-import org.apache.http.util.EncodingUtils;
-
-import android.util.Log;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 public class NetworkHelper implements Runnable{
-//	private final static String urls = "http://www.kekenet.com/read/";
-	private final static String urls = "https://raw.githubusercontent.com/rockflying/dailysnack/master/README.md";
+	private final static String url = "http://www.kekenet.com/read/";
 	
 	public static String content = "";
 	
 	public static String getContent() {
+		List<String> list = new ArrayList<String>();
 		try {
-			URL url = new URL(urls);
-			URLConnection myConn = url.openConnection();
-//			myConn.connect();
-			InputStream in = myConn.getInputStream();
-			BufferedInputStream bis = new BufferedInputStream(in);
-			
-			ByteArrayBuffer baf = new ByteArrayBuffer(bis.available());
-			int data = 0;
-			while((data = bis.read())!=-1) {
-				baf.append((byte)data);
+			Document doc = Jsoup.connect(url).get();
+
+			Elements elements = doc.getElementsByClass("kouyu_photo");
+
+			for(Element element : elements) {
+				Elements hrefs = element.select("a[href]");
+				int dup = 0;
+				for(Element href : hrefs) {
+					if(dup == 1) {  //to skip duplicated links
+						dup = 0;
+						continue;
+					}
+					dup = 1;
+					list.add(href.toString());
+					System.out.println(href.attr("href")
+							+ href.childNodes().get(0).attr("src")
+							+ href.attr("title"));
+				}
 			}
-			
-			content = EncodingUtils.getString(baf.toByteArray(), "UTF-8");
-			
-			Log.i("I", "--------------------"+ content);
-		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

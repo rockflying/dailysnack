@@ -1,4 +1,4 @@
-package com.snack.main.dummy;
+package com.snack.main.content;
 
 import java.util.ArrayList;
 import java.util.HashMap;

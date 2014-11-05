@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.snack.main.dummy.DummyContent;
+import com.snack.main.content.DummyContent;
 import com.snack.util.NetworkHelper;
 
 /**
