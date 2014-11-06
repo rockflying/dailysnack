@@ -33,18 +33,18 @@ public class ItemListActivity extends FragmentActivity implements
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_item_list);
 
-		if (findViewById(R.id.item_detail_container) != null) {
-			// The detail container view will be present only in the
-			// large-screen layouts (res/values-large and
-			// res/values-sw600dp). If this view is present, then the
-			// activity should be in two-pane mode.
-			mTwoPane = true;
-
-			// In two-pane mode, list items should be given the
-			// 'activated' state when touched.
-			((ItemListFragment) getSupportFragmentManager().findFragmentById(
-					R.id.item_list)).setActivateOnItemClick(true);
-		}
+//		if (findViewById(R.id.item_detail_container) != null) {
+//			// The detail container view will be present only in the
+//			// large-screen layouts (res/values-large and
+//			// res/values-sw600dp). If this view is present, then the
+//			// activity should be in two-pane mode.
+//			mTwoPane = true;
+//
+//			// In two-pane mode, list items should be given the
+//			// 'activated' state when touched.
+//			((ItemListFragment) getSupportFragmentManager().findFragmentById(
+//					R.id.item_list)).setActivateOnItemClick(true);
+//		}
 
 		// TODO: If exposing deep links into your app, handle intents here.
 	}
@@ -54,13 +54,13 @@ public class ItemListActivity extends FragmentActivity implements
 	 * the item with the given ID was selected.
 	 */
 	@Override
-	public void onItemSelected(String id) {
+	public void onItemSelected(int id) {
 		if (mTwoPane) {
 			// In two-pane mode, show the detail view in this activity by
 			// adding or replacing the detail fragment using a
 			// fragment transaction.
 			Bundle arguments = new Bundle();
-			arguments.putString(ItemDetailFragment.ARG_ITEM_ID, id);
+			arguments.putInt(ItemDetailFragment.ARG_ITEM_ID, id);
 			ItemDetailFragment fragment = new ItemDetailFragment();
 			fragment.setArguments(arguments);
 			getSupportFragmentManager().beginTransaction()

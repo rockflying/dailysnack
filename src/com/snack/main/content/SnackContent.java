@@ -1,44 +1,49 @@
 package com.snack.main.content;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+
+import com.snack.main.R;
+
 
 /**
  * @author Administrator
  *
  */
 public class SnackContent {
-	private List<SnackItem> ITEMS = new ArrayList<SnackItem>();
+	public static  List<SnackItem> ITEMS = new ArrayList<SnackItem>();
 	
-	private Map<String, SnackItem> ITEM_MAP = new HashMap<String, SnackItem>();
-	
+	static {
+		addItem(new SnackItem(1, R.string.recommand));
+		addItem(new SnackItem(2, R.string.campus));
+		addItem(new SnackItem(3, R.string.fashion));
+		addItem(new SnackItem(3, R.string.news));
+		addItem(new SnackItem(3, R.string.office));
+	}
 	
 	/**
 	 * add item to list and map
 	 * @param item
 	 */
-	public void addItem(SnackItem item) {
+	public static void addItem(SnackItem item) {
 		ITEMS.add(item);
-		ITEM_MAP.put(item.id, item);
 	}
 	
 	/**
 	 * An item representing a piece of content.
 	 */
 	public static class SnackItem {
-		public String id;
-		public String content;
+		public int id;
+		public int content;
 
-		public SnackItem(String id, String content) {
+		public SnackItem(int id, int content) {
 			this.id = id;
 			this.content = content;
 		}
 
 		@Override
 		public String toString() {
-			return content;
+			return content + "";
 		}
 	}
 }

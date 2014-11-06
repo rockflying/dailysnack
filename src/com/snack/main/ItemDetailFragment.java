@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.snack.main.content.DummyContent;
+import com.snack.main.content.SnackContent;
 import com.snack.util.NetworkHelper;
 
 /**
@@ -26,7 +26,7 @@ public class ItemDetailFragment extends Fragment {
 	/**
 	 * The dummy content this fragment is presenting.
 	 */
-	private DummyContent.DummyItem mItem;
+	private SnackContent.SnackItem mItem;
 
 	/**
 	 * Mandatory empty constructor for the fragment manager to instantiate the
@@ -43,7 +43,7 @@ public class ItemDetailFragment extends Fragment {
 			// Load the dummy content specified by the fragment
 			// arguments. In a real-world scenario, use a Loader
 			// to load content from a content provider.
-			mItem = DummyContent.ITEM_MAP.get(getArguments().getString(
+			mItem = SnackContent.ITEMS.get(getArguments().getInt(
 					ARG_ITEM_ID));
 		}
 		Log.i("Info", "oncreate");

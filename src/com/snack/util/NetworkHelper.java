@@ -31,9 +31,6 @@ public class NetworkHelper implements Runnable{
 					}
 					dup = 1;
 					list.add(href.toString());
-					System.out.println(href.attr("href")
-							+ href.childNodes().get(0).attr("src")
-							+ href.attr("title"));
 				}
 			}
 		} catch (IOException e) {
