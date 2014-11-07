@@ -9,7 +9,7 @@ import android.view.MenuItem;
 /**
  * An activity representing a single Item detail screen. This activity is only
  * used on handset devices. On tablet-size devices, item details are presented
- * side-by-side with a list of items in a {@link ItemListActivity}.
+ * side-by-side with a list of items in a {@link SubjectListActivity}.
  * <p>
  * This activity is mostly just a 'shell' activity containing nothing more than
  * a {@link ItemDetailFragment}.
@@ -29,9 +29,6 @@ public class ItemDetailActivity extends FragmentActivity {
 		// (e.g. when rotating the screen from portrait to landscape).
 		// In this case, the fragment will automatically be re-added
 		// to its container so we don't need to manually add it.
-		// For more information, see the Fragments API guide at:
-		//
-		// http://developer.android.com/guide/components/fragments.html
 		//
 		if (savedInstanceState == null) {
 			// Create the detail fragment and add it to the activity
@@ -54,11 +51,9 @@ public class ItemDetailActivity extends FragmentActivity {
 			// activity, the Up button is shown. Use NavUtils to allow users
 			// to navigate up one level in the application structure. For
 			// more details, see the Navigation pattern on Android Design:
-			//
-			// http://developer.android.com/design/patterns/navigation.html#up-vs-back
-			//
+
 			NavUtils.navigateUpTo(this,
-					new Intent(this, ItemListActivity.class));
+					new Intent(this, SubjectListActivity.class));
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
