@@ -15,13 +15,8 @@ import com.snack.main.content.SnackContent;
 import com.snack.main.content.SnackContent.SnackItem;
 
 /**
- * A list fragment representing a list of Items. This fragment also supports
- * tablet devices by allowing list items to be given an 'activated' state upon
- * selection. This helps indicate which item is currently being viewed in a
- * {@link ItemDetailFragment}.
- * <p>
- * Activities containing this fragment MUST implement the {@link Callbacks}
- * interface.
+ * A list fragment representing a list of Items.
+ * Activities containing this fragment MUST implement the Callbacks interface.
  */
 public class MainListFragment extends ListFragment {
 
@@ -90,7 +85,7 @@ public class MainListFragment extends ListFragment {
 		// Activities containing this fragment must implement its callbacks.
 		if (!(activity instanceof Callbacks)) {
 			throw new IllegalStateException(
-					"Activity must implement fragment's callbacks.");
+					"Activity must implement Callbacks.");
 		}
 
 		mCallbacks = (Callbacks) activity;
@@ -121,18 +116,6 @@ public class MainListFragment extends ListFragment {
 			// Serialize and persist the activated item position.
 			outState.putInt(STATE_ACTIVATED_POSITION, mActivatedPosition);
 		}
-	}
-
-	/**
-	 * Turns on activate-on-click mode. When this mode is on, list items will be
-	 * given the 'activated' state when touched.
-	 */
-	public void setActivateOnItemClick(boolean activateOnItemClick) {
-		// When setting CHOICE_MODE_SINGLE, ListView will automatically
-		// give items the 'activated' state when touched.
-		getListView().setChoiceMode(
-				activateOnItemClick ? ListView.CHOICE_MODE_SINGLE
-						: ListView.CHOICE_MODE_NONE);
 	}
 
 	private void setActivatedPosition(int position) {
