@@ -8,6 +8,6 @@ public class ItemListActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.id.sub_item_list);
+		setContentView(R.id.item_list);
 	}
 }

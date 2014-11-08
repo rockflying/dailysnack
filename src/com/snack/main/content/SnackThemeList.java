@@ -10,7 +10,7 @@ import com.snack.main.R;
  * @author Administrator
  *
  */
-public class SnackContent {
+public class SnackThemeList {
 	public static  List<SnackItem> ITEMS = new ArrayList<SnackItem>();
 	
 	static {
@@ -22,7 +22,7 @@ public class SnackContent {
 	}
 	
 	/**
-	 * add item to list and map
+	 * add item to list
 	 * @param item
 	 */
 	public static void addItem(SnackItem item) {

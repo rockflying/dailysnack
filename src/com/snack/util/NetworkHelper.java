@@ -1,13 +1,14 @@
 package com.snack.util;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+
 
 public class NetworkHelper implements Runnable{
 	private final static String url = "http://www.kekenet.com/read/";
@@ -17,7 +18,11 @@ public class NetworkHelper implements Runnable{
 	public static String getContent() {
 		List<String> list = new ArrayList<String>();
 		try {
-			Document doc = Jsoup.connect(url).get();
+			Connection connection = Jsoup.connect(url);
+			
+			System.out.println(connection);
+			
+			Document doc = connection.get();
 
 			Elements elements = doc.getElementsByClass("kouyu_photo");
 
@@ -33,13 +38,13 @@ public class NetworkHelper implements Runnable{
 					list.add(href.toString());
 				}
 			}
-		} catch (IOException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return content;
 	}
-
+	
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
