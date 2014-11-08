@@ -1,9 +1,9 @@
 package com.snack.main;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 
-public class ItemListActivity extends FragmentActivity {
+public class ItemListActivity extends Activity {
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {

@@ -1,7 +1,7 @@
 package com.snack.main;
 
+import android.app.ListFragment;
 import android.os.Bundle;
-import android.support.v4.app.ListFragment;
 import android.widget.ArrayAdapter;
 
 public class ItemListFragment extends ListFragment{

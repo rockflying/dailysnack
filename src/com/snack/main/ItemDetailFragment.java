@@ -1,7 +1,7 @@
 package com.snack.main;
 
+import android.app.Fragment;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,7 +13,7 @@ import com.snack.util.NetworkHelper;
 
 /**
  * A fragment representing a single Item detail screen. This fragment is either
- * contained in a {@link SubjectListActivity} in two-pane mode (on tablets) or a
+ * contained in a {@link MainListActivity} in two-pane mode (on tablets) or a
  * {@link ItemDetailActivity} on handsets.
  */
 public class ItemDetailFragment extends Fragment {
