@@ -4,11 +4,12 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.snack.common.Callbacks;
+
 /**
  * Main list activity representing a list of subject items.
  */
-public class MainListActivity extends Activity implements
-		SubjectListFragment.Callbacks {
+public class MainListActivity extends Activity implements Callbacks {
 
 	/**
 	 * Whether or not the activity is in two-pane mode, i.e. running on a tablet
@@ -38,7 +39,7 @@ public class MainListActivity extends Activity implements
 	}
 
 	/**
-	 * Callback method from {@link SubjectListFragment.Callbacks} indicating that
+	 * Callback method from {@link MainListFragment.Callbacks} indicating that
 	 * the item with the given ID was selected.
 	 */
 	@Override

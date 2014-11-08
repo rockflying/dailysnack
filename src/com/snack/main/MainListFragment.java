@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.snack.common.Callbacks;
 import com.snack.main.content.SnackContent;
 import com.snack.main.content.SnackContent.SnackItem;
 
@@ -22,7 +23,7 @@ import com.snack.main.content.SnackContent.SnackItem;
  * Activities containing this fragment MUST implement the {@link Callbacks}
  * interface.
  */
-public class SubjectListFragment extends ListFragment {
+public class MainListFragment extends ListFragment {
 
 	/**
 	 * The serialization (saved instance state) Bundle key representing the
@@ -40,19 +41,6 @@ public class SubjectListFragment extends ListFragment {
 	 * The current activated item position. Only used on tablets.
 	 */
 	private int mActivatedPosition = ListView.INVALID_POSITION;
-
-	/**
-	 * A callback interface that all activities containing this fragment must
-	 * implement. This mechanism allows activities to be notified of item
-	 * selections.
-	 */
-	public interface Callbacks {
-		/**
-		 * Callback for when an item has been selected.
-		 */
-		public void onItemSelected(int id);
-	}
-
 	/**
 	 * A dummy implementation of the {@link Callbacks} interface that does
 	 * nothing. Used only when this fragment is not attached to an activity.
@@ -67,7 +55,7 @@ public class SubjectListFragment extends ListFragment {
 	 * Mandatory empty constructor for the fragment manager to instantiate the
 	 * fragment (e.g. upon screen orientation changes).
 	 */
-	public SubjectListFragment() {
+	public MainListFragment() {
 	}
 
 	@Override

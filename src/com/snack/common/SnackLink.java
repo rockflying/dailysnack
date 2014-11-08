@@ -7,7 +7,7 @@ package com.snack.common;
  * @author Administrator
  *
  */
-public class MyLink {
+public class SnackLink {
 	private String url;
 	
 	private String imgUrl;
