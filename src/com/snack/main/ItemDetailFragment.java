@@ -61,10 +61,10 @@ public class ItemDetailFragment extends Fragment {
 //					.setText(mItem.content);
 //		}
 		((TextView) rootView.findViewById(R.id.item_detail)).setText("--------");
-		new Thread(new NetworkHelper()).start();
-		if(NetworkHelper.content != "") {
-			((TextView) rootView.findViewById(R.id.item_detail)).setText(NetworkHelper.content);
-		}
+//		new Thread(new NetworkHelper()).start();
+//		if(NetworkHelper.content != "") {
+//			((TextView) rootView.findViewById(R.id.item_detail)).setText(NetworkHelper.content);
+//		}
 		Log.i("Info", "oncreateview");
 		return rootView;
 	}

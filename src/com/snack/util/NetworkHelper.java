@@ -11,12 +11,27 @@ import org.jsoup.select.Elements;
 
 
 public class NetworkHelper implements Runnable{
-	private final static String url = "http://www.kekenet.com/read/";
+	private final String baseUrl = "http://www.kekenet.com";
 	
-	public static String content = "";
+	private String url = "http://www.kekenet.com/read/";
 	
-	public static String getContent() {
-		List<String> list = new ArrayList<String>();
+	private List<String> urlList = new ArrayList<String>();
+	
+	private List<String> titleList = new ArrayList<String>();
+	
+	public NetworkHelper(String target) {
+		url = target;
+	}
+	
+	public List<String> getUrlList() {
+		return urlList;
+	}
+
+	public List<String> getTitleList() {
+		return titleList;
+	}
+
+	public void getContent() {
 		try {
 			Connection connection = Jsoup.connect(url);
 			
@@ -35,19 +50,19 @@ public class NetworkHelper implements Runnable{
 						continue;
 					}
 					dup = 1;
-					list.add(href.toString());
+					urlList.add(href.attr(baseUrl+"href"));
+					titleList.add(href.attr("title"));
 				}
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return content;
 	}
 	
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
-		NetworkHelper.getContent();
+		new NetworkHelper("").getContent();
 	}
 }
