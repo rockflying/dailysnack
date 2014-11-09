@@ -25,12 +25,13 @@
         </activity>
         <activity
             android:name="com.snack.main.ItemDetailActivity"
-            android:label="@string/title_item_detail"
+            android:label="@string/title_detail"
             android:parentActivityName=".MainListActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ItemListActivity" />
         </activity>
+        <activity android:name="com.snack.main.ItemListActivity"></activity>
     </application>
 
 </manifest>

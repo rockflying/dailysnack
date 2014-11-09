@@ -39,7 +39,7 @@ public class MainListActivity extends Activity implements Callbacks {
 	}
 
 	/**
-	 * Callback method from {@link MainListFragment.Callbacks} indicating that
+	 * Callback method indicating that
 	 * the item with the given ID was selected.
 	 */
 	@Override
@@ -58,8 +58,8 @@ public class MainListActivity extends Activity implements Callbacks {
 		} else {
 			// In single-pane mode, simply start the detail activity
 			// for the selected item ID.
-			Intent detailIntent = new Intent(this, ItemDetailActivity.class);
-			detailIntent.putExtra(ItemDetailFragment.ARG_ITEM_ID, id);
+			Intent detailIntent = new Intent(this, ItemListActivity.class);
+			detailIntent.putExtra(ItemListFragment.ARG_ITEM_ID, id);
 			startActivity(detailIntent);
 		}
 	}

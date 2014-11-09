@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.snack.main.content.SnackThemeList;
-import com.snack.util.NetworkHelper;
 
 /**
  * A fragment representing a single Item detail screen. This fragment is either
@@ -24,7 +23,7 @@ public class ItemDetailFragment extends Fragment {
 	public static final String ARG_ITEM_ID = "item_id";
 
 	/**
-	 * The dummy content this fragment is presenting.
+	 * The content this fragment is presenting.
 	 */
 	private SnackThemeList.SnackItem mItem;
 
@@ -60,6 +59,7 @@ public class ItemDetailFragment extends Fragment {
 //			((TextView) rootView.findViewById(R.id.item_detail))
 //					.setText(mItem.content);
 //		}
+		getActivity().setTitle("Ê±ÉÐË«Óï");
 		((TextView) rootView.findViewById(R.id.item_detail)).setText("--------");
 //		new Thread(new NetworkHelper()).start();
 //		if(NetworkHelper.content != "") {
