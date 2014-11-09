@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">DailySnack</string>
+    <string name="app_name">每日文摘</string>
     <string name="title_item_detail">Item Detail</string>
 	<string name="recommand">推荐精选</string>
 	<string name="fashion">时尚双语</string>
