@@ -11,8 +11,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.snack.common.Callbacks;
-import com.snack.main.content.SnackThemeList;
-import com.snack.main.content.SnackThemeList.SnackItem;
+import com.snack.main.content.SnackSubjectList;
+import com.snack.main.content.SnackSubjectList.SnackItem;
 
 /**
  * A list fragment representing a list of Items.
@@ -58,7 +58,7 @@ public class MainListFragment extends ListFragment {
 		super.onCreate(savedInstanceState);
 		
 		List<String> list = new ArrayList<String>();
-		for(SnackItem item : SnackThemeList.ITEMS) {
+		for(SnackItem item : SnackSubjectList.ITEMS) {
 			list.add(getResources().getString(item.content));
 		}
 		setListAdapter(new ArrayAdapter<String>(getActivity(),
@@ -106,7 +106,7 @@ public class MainListFragment extends ListFragment {
 
 		// Notify the active callbacks interface (the activity, if the
 		// fragment is attached to one) that an item has been selected.
-		mCallbacks.onItemSelected(SnackThemeList.ITEMS.get(position).id);
+		mCallbacks.onItemSelected(SnackSubjectList.ITEMS.get(position).id);
 	}
 
 	@Override

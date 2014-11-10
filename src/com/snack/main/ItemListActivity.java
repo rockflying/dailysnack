@@ -3,7 +3,6 @@ package com.snack.main;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 public class ItemListActivity extends Activity {
 	
@@ -21,8 +20,9 @@ public class ItemListActivity extends Activity {
 		case android.R.id.home:
 			// This is called when the Home (Up) button is pressed
 			// in the Action Bar.
-			//NavUtils.navigateUpFromSameTask(this);
-			Toast.makeText(getApplicationContext(), "UPUPUPUPUP", Toast.LENGTH_SHORT).show();
+//			NavUtils.navigateUpFromSameTask(this);    //from the support.v4 library
+//			navigateUpTo(getParentActivityIntent());    //API 16 and above
+			onBackPressed();
 			return true;
 		}
 		return super.onOptionsItemSelected(item);	

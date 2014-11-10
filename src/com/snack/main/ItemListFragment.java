@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
-import com.snack.main.content.SnackThemeList;
+import com.snack.main.content.SnackSubjectList;
 
 public class ItemListFragment extends ListFragment{
 	
@@ -27,7 +27,7 @@ public class ItemListFragment extends ListFragment{
 		Bundle bundle = activity.getIntent().getExtras();
 		int id = bundle.getInt(ARG_ITEM_ID);
 		
-		String title = getResources().getString(SnackThemeList.ITEMS.get(id-1).content);
+		String title = getResources().getString(SnackSubjectList.ITEMS.get(id-1).content);
 		activity.setTitle(title);
 		Toast.makeText(activity,
 				title,

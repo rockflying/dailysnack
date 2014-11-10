@@ -10,7 +10,7 @@ import com.snack.main.R;
  * @author Administrator
  *
  */
-public class SnackThemeList {
+public class SnackSubjectList {
 	public static  List<SnackItem> ITEMS = new ArrayList<SnackItem>();
 	
 	static {
