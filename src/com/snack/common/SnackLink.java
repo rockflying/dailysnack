@@ -14,6 +14,12 @@ public class SnackLink {
 	
 	private String title;
 
+	public SnackLink(String url, String imgUrl, String title) {
+		this.url = url;
+		this.imgUrl = imgUrl;
+		this.title = title;
+	}
+
 	public String getUrl() {
 		return url;
 	}

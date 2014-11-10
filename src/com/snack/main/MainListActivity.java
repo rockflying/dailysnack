@@ -1,16 +1,27 @@
 package com.snack.main;
 
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
 import com.snack.common.Callbacks;
+import com.snack.common.SnackLink;
 
 /**
  * Main list activity representing a list of subject items.
  */
 public class MainListActivity extends Activity implements Callbacks {
 
+	private Map<String, List<SnackLink>> subjectMap = new HashMap<String, List<SnackLink>>();
+		
+	private Date wgetime = null;  //download time
+	
+	private final long MiSEC = 43200000;  //1000*60*60*24/2  half day
 	/**
 	 * Whether or not the activity is in two-pane mode, i.e. running on a tablet
 	 * device.
@@ -44,6 +55,10 @@ public class MainListActivity extends Activity implements Callbacks {
 	 */
 	@Override
 	public void onItemSelected(int id) {
+		if(null == wgetime) {
+			wgetime = new Date();
+			downloadContent();
+		}
 		if (mTwoPane) {
 			// In two-pane mode, show the detail view in this activity by
 			// adding or replacing the detail fragment using a
@@ -62,5 +77,9 @@ public class MainListActivity extends Activity implements Callbacks {
 			detailIntent.putExtra(ItemListFragment.ARG_ITEM_ID, id);
 			startActivity(detailIntent);
 		}
+	}
+	
+	private void downloadContent() {
+		
 	}
 }

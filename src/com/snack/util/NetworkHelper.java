@@ -2,17 +2,22 @@ package com.snack.util;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import com.snack.common.SnackLink;
+
 
 public class NetworkHelper implements Runnable{
 	private final String baseUrl = "http://www.kekenet.com";
 	
 	private String url = "http://www.kekenet.com/read/";
+	
+	private final String[] subjects = {"时尚双语", "职场英语", "校园英语", "时事新闻"};
 	
 	private String subject = "kouyu_photo";
 	
@@ -64,6 +69,11 @@ public class NetworkHelper implements Runnable{
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
-		new NetworkHelper("").getContent();
+		getContent();
+	}
+	
+	public Map<String, List<SnackLink>> getsubjectMap() {
+
+		return null;
 	}
 }

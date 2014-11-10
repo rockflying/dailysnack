@@ -15,10 +15,10 @@ public class SnackSubjectList {
 	
 	static {
 		addItem(new SnackItem(1, R.string.recommand));
-		addItem(new SnackItem(2, R.string.campus));
 		addItem(new SnackItem(3, R.string.fashion));
-		addItem(new SnackItem(3, R.string.news));
 		addItem(new SnackItem(3, R.string.office));
+		addItem(new SnackItem(2, R.string.campus));
+		addItem(new SnackItem(3, R.string.news));
 	}
 	
 	/**
