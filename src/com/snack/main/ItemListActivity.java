@@ -1,10 +1,12 @@
 package com.snack.main;
 
+import com.snack.common.Callbacks;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-public class ItemListActivity extends Activity {
+public class ItemListActivity extends Activity implements Callbacks{
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -26,5 +28,11 @@ public class ItemListActivity extends Activity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);	
+	}
+
+	@Override
+	public void onItemSelected(int id) {
+		// TODO Auto-generated method stub
+		
 	}
 }
